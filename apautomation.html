@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT SENTOSA SOLUSI INDONESIA</title>
+    <link rel="icon" type="image/x-icon" href="ico/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+
+        #cb:checked~ul {
+            transform: translateX(0%);
+        }
+
+        #cb2:checked~ul {
+            transform: translateX(100%);
+        }
+
+        span#procent {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 50px;
+            transform: translate(-50%, -50%);
+            color: black;
+        }
+
+        span#procent::after {
+            content: '%';
+        }
+
+        .canvas-wrap {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full h-28 z-20 bg-gradient-to-b from-white via-white to-transparent fixed flex items-center mt-[-15px]
+  ">
+        <!-- Mobile Nav -->
+        <div class="h-14 flex justify-start sm:hidden">
+            <input type="checkbox" id="cb" hidden>
+            <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+                <div class="mt-[0.9rem] ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none">
+                        <path d="M3 3H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+                        <path d="M3 14H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+                        <path d="M3 25H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </label>
+            <ul
+                class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0">
+                <input type="checkbox" id="cb2" hidden>
+                <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        class="mb-5">
+                        <path d="M3 3L27.0416 27.0416" stroke="black" stroke-width="5" stroke-linecap="round" />
+                        <path d="M3 27.0416L27.0416 3" stroke="black" stroke-width="5" stroke-linecap="round" />
+                    </svg>
+                </label>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="index.html#about">
+                    <li>About</li>
+                </a>
+                <a href="product.html">
+                    <li>Product</li>
+                </a>
+                <a href="index.html#customer">
+                    <li>Customer</li>
+                </a>
+                <a href="service.html">
+                    <li>Service</li>
+                </a>
+                <a href="index.html#contactus">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+        </div>
+        <!-- Mobile Nav -->
+        <!-- Tablet Laptop Desktop -->
+        <div class="w-full flex justify-center relative pr-[3rem] sm:w-full sm:pr-0">
+            <div class="hidden w-full md:flex md:justify-center items-center md:pr-2">
+                <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40 ">
+                    <li><a href="index.html" class="font-normal text-black hover:text-red-600 duration-300">Home</a>
+                    </li>
+                    <li><a href="index.html#about"
+                            class="font-normal text-black hover:text-red-600 duration-300">About</a></li>
+                    <li><a href="product.html"
+                            class="font-normal text-black hover:text-red-600 duration-300">Product</a></li>
+                </ul>
+            </div>
+            <img src="img/logo.png" id="logo" alt="" class="w-28 h-14 cursor-pointer">
+            <div class="hidden w-full md:flex justify-center items-center md:pl-2 md:pr-2">
+                <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40">
+                    <li><a href="index.html#customer"
+                            class="font-normal text-black hover:text-red-600 duration-300">Customer</a></li>
+                    <li><a href="service.html"
+                            class="font-normal text-black hover:text-red-600 duration-300">Service</a></li>
+                    <li><a href="index.html#contactus"
+                            class="font-normal text-black hover:text-red-600 duration-300">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Tablet Laptop Desktop -->
+    </nav>
+
+    <section class="w-full h-max pt-24">
+        <div class="w-full h-40 bg-gradient-to-l from-red-400 to-white flex justify-start items-center mb-4 md:h-60">
+            <div class="w-full h-max text-3xl font-bold tracking-wider pl-6 md:text-4xl lg:text-5xl">
+                <h1 class="text-red-600">AP</h1>
+                <h1 class="text-gray-600">Automation</h1>
+            </div>
+        </div>
+
+        <div class="w-full h-max flex justify-center py-4">
+            <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">What Is <span
+                    class="font-semibold text-gray-600">AP Automation</span></h3>
+        </div>
+
+        <div class="w-full h-max flex justify-center px-4 mb-6 lg:px-32">
+            <div class="w-max md:text-2xl">
+                <p class="text-center font-semibold text-gray-600">comes with advanced technology to supports the
+                    AP-Accounts Payable process at your organization by simplifying the process through digitization,
+                    automation and integrated to your ERP System.</p>
+            </div>
+        </div>
+
+
+        <div class="">
+            <div class="h-max flex justify-center items-start overflow-hidden">
+                <div class="canvas-wrap">
+                    <canvas id="canvas" width="300" height="300"></canvas>
+                    <span id="procent"></span>
+                </div>
+            </div>
+            <div class="w-full h-max flex justify-center mb-4">
+                <h3 class="font-bold text-2xl text-red-600 lg:text-3xl tracking-widest">By 2025</h3>
+            </div>
+        </div>
+
+        <div class="w-full h-max flex justify-center px-4 mb-10 lg:px-32 lg:mb-20">
+            <div class="w-max md:text-2xl">
+                <p class="text-center font-semibold text-gray-600">50% of business-to-business invoices worldwide will
+                    be processed and paid without manual intervention</p>
+            </div>
+        </div>
+
+        <div class="w-full h-max flex justify-center py-4 md:mb-5">
+            <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">Benefit <span
+                    class="font-semibold text-gray-600">AP Automation</span></h3>
+        </div>
+
+        <div
+            class="w-full h-max overflow-hidden flex justify-center items-center bg-gradient-to-l from-red-400 to-white py-4 md:h-32">
+            <h3 data-aos="fade-right" data-aos-duration="1000"
+                class="font-bold text-lg text-slate-600 lg:text-3xl tracking-wide">REDUCE DATA ENTRY</h3>
+        </div>
+        <div
+            class="w-full h-max flex overflow-hidden justify-center items-center bg-gradient-to-r from-red-300 to-white py-4 md:h-32">
+            <h3 data-aos="fade-left" data-aos-duration="1000"
+                class="font-bold text-lg text-slate-700 lg:text-3xl tracking-wide">REDUCE FRAUD</h3>
+        </div>
+        <div
+            class="w-full h-max flex overflow-hidden justify-center items-center bg-gradient-to-l from-red-400 to-white py-4 mb-10 md:h-32 md:mb-20">
+            <h3 data-aos="fade-right" data-aos-duration="1000"
+                class="font-bold text-lg text-slate-800 lg:text-3xl tracking-wide">IMPROVE APPROVAL TIME</h3>
+        </div>
+
+        <div class="w-full h-max flex justify-center py-4 md:mb-5">
+            <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">Demo <span
+                    class="font-semibold text-gray-600">Application</span></h3>
+        </div>
+
+        <div class="w-full h-max flex justify-center py-4 px-4">
+            <img src="/img/documentupload.jpg" alt="" class="rounded border-2 md:w-[70rem] md:rounded-xl md:mb-5">
+        </div>
+
+        <div class="w-full h-max flex justify-center py-4 px-4 mb-20">
+            <img src="/img/grafik.jpg" alt="" class="rounded border-2 md:w-[70rem] md:rounded-xl">
+        </div>
+
+    </section>
+
+    <footer class="w-full h-max bg-[#393939] px-4 py-6 md:h-[20rem]">
+        <h1 class="font-bold text-xl text-white tracking-wide mb-4">PT Sentosa Solusi Indonesia</h1>
+        <h2 class="font-semibold text-xl text-white mb-4 tracking-wide">Mensana Tower Lt 5 (voffice) JL Raya Kranggan
+            Rt/Rw 002/016 Kel Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h2>
+        <p class="text-sm text-white mb-4 tracking-wide">Phone: +62 21 29 557 336</p>
+        <p class="text-sm overflow-hidden text-white mb-4 tracking-wide">Email: support@sentosasolutions.com</p>
+        <h3 class="text-xl text-white text-center font-bold tracking-wide mt-7">© 2024 - PT Sentosa Solusi Indonesia
+        </h3>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Mengambil elemen gambar dengan id "gambarKlik"
+        var gambar = document.getElementById("logo");
+
+        // Menambahkan event listener untuk menanggapi klik pada gambar
+        gambar.addEventListener("click", function () {
+            // Mengarahkan pengguna ke halaman lain
+            window.location.href = "index.html";
+        });
+
+        window.onload = function () {
+            var can = document.getElementById('canvas'),
+                spanProcent = document.getElementById('procent'),
+                c = can.getContext('2d');
+
+            var posX = can.width / 2,
+                posY = can.height / 2,
+                fps = 1000 / 200,
+                procent = 0,
+                oneProcent = 360 / 100,
+                result = oneProcent * 50;
+
+            c.lineCap = 'round';
+            arcMove();
+
+            function arcMove() {
+                var deegres = 0;
+                var acrInterval = setInterval(function () {
+                    deegres += 1;
+                    c.clearRect(0, 0, can.width, can.height);
+                    procent = deegres / oneProcent;
+
+                    spanProcent.innerHTML = procent.toFixed();
+
+                    c.beginPath();
+                    c.arc(posX, posY, 70, (Math.PI / 180) * 270, (Math.PI / 180) * (270 + 360));
+                    c.strokeStyle = '#b1b1b1';
+                    c.lineWidth = '20';
+                    c.stroke();
+
+                    c.beginPath();
+                    c.strokeStyle = '#00B3FF';
+                    c.lineWidth = '20';
+                    c.arc(posX, posY, 70, (Math.PI / 180) * 270, (Math.PI / 180) * (270 + deegres));
+                    c.stroke();
+                    if (deegres >= result) clearInterval(acrInterval);
+                }, fps);
+
+            }
+
+
+        }
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</div>
+
+</html>

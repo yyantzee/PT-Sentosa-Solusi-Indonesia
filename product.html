@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT SENTOSA SOLUSI INDONESIA</title>
+  <link rel="icon" type="image/x-icon" href="ico/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+  <link rel="manifest" href="ico/site.webmanifest">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+
+
+    #cb:checked~ul {
+      transform: translateX(0%);
+    }
+
+    #cb2:checked~ul {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="w-full h-28 z-20 bg-gradient-to-b from-white via-white to-transparent fixed flex items-center mt-[-15px]
+  ">
+    <!-- Mobile Nav -->
+    <div class="h-14 flex justify-start sm:hidden">
+      <input type="checkbox" id="cb" hidden>
+      <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+        <div class="mt-[0.9rem] ml-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none">
+            <path d="M3 3H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 14H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 25H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </div>
+      </label>
+      <ul
+        class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0">
+        <input type="checkbox" id="cb2" hidden>
+        <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="mb-5">
+            <path d="M3 3L27.0416 27.0416" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 27.0416L27.0416 3" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </label>
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="index.html#about">
+          <li>About</li>
+        </a>
+        <a href="product.html">
+          <li>Product</li>
+        </a>
+        <a href="index.html#customer">
+          <li>Customer</li>
+        </a>
+        <a href="service.html">
+          <li>Service</li>
+        </a>
+        <a href="index.html#contactus">
+          <li>Contact Us</li>
+        </a>
+      </ul>
+    </div>
+    <!-- Mobile Nav -->
+    <!-- Tablet Laptop Desktop -->
+    <div class="w-full flex justify-center relative pr-[3rem] sm:w-full sm:pr-0">
+      <div class="hidden w-full md:flex md:justify-center items-center md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40 ">
+          <li><a href="index.html" class="font-normal text-black hover:text-red-600 duration-300">Home</a></li>
+          <li><a href="index.html#about" class="font-normal text-black hover:text-red-600 duration-300">About</a></li>
+          <li><a href="product.html" class="font-normal text-black hover:text-red-600 duration-300">Product</a></li>
+        </ul>
+      </div>
+      <img src="img/logo.png" id="logo" alt="" class="w-28 h-14 cursor-pointer">
+      <div class="hidden w-full md:flex justify-center items-center md:pl-2 md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40">
+          <li><a href="index.html#customer" class="font-normal text-black hover:text-red-600 duration-300">Customer</a>
+          </li>
+          <li><a href="service.html" class="font-normal text-black hover:text-red-600 duration-300">Service</a></li>
+          <li><a href="index.html#contactus" class="font-normal text-black hover:text-red-600 duration-300">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Tablet Laptop Desktop -->
+  </nav>
+
+  <section class="w-full h-max pt-24">
+    <div class="w-full h-40 bg-gradient-to-l from-red-400 to-white flex justify-start items-center mb-4 md:h-60">
+      <div class="w-full h-max text-3xl font-bold tracking-wider pl-6 md:text-4xl lg:text-5xl">
+        <h1 class="text-red-600">Our</h1>
+        <h1 class="text-gray-600">Product</h1>
+      </div>
+    </div>
+
+    <div class="w-full h-max mb-[0.40rem]">
+      <h3 class="text-2xl text-center font-semibold tracking-wider text-red-600">Product</h3>
+    </div>
+
+    <div class="flex justify-center mb-6">
+      <div class="w-24 h-1 bg-red-600 rounded-full"></div>
+    </div>
+
+    <div class="w-full h-max px-4 flex justify-center">
+      <div class="grid grid-cols-1 gap-5 mb-20">
+        <!--  -->
+        <a href="apautomation.html">
+          <div
+            class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+            <div class="h-80 w-72">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                src="img/apautomationpost.png" alt="" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+            </div>
+            <div
+              class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+              <h1 class="font-dmserif text-3xl font-bold text-white">AP Automation</h1>
+            </div>
+          </div>
+        </a>
+        <!--  -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full h-max bg-[#393939] px-4 py-6 md:h-[20rem]">
+    <h1 class="font-bold text-xl text-white tracking-wide mb-4">PT Sentosa Solusi Indonesia</h1>
+    <h2 class="font-semibold text-xl text-white mb-4 tracking-wide">Mensana Tower Lt 5 (voffice) JL Raya Kranggan Rt/Rw
+      002/016 Kel Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h2>
+    <p class="text-sm text-white mb-4 tracking-wide">Phone: +62 21 29 557 336</p>
+    <p class="text-sm overflow-hidden text-white mb-4 tracking-wide">Email: support@sentosasolutions.com</p>
+    <h3 class="text-xl text-white text-center font-bold tracking-wide mt-7">© 2024 - PT Sentosa Solusi Indonesia </h3>
+  </footer>
+
+  <script>
+    // Mengambil elemen gambar dengan id "gambarKlik"
+    var gambar = document.getElementById("logo");
+
+    // Menambahkan event listener untuk menanggapi klik pada gambar
+    gambar.addEventListener("click", function () {
+      // Mengarahkan pengguna ke halaman lain
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</div>
+
+</html>

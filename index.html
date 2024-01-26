@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT SENTOSA SOLUSI INDONESIA</title>
+  <link rel="icon" type="image/x-icon" href="ico/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+  <link rel="manifest" href="ico/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    #cb:checked~ul {
+      transform: translateX(0%);
+    }
+
+    #cb2:checked~ul {
+      transform: translateX(100%);
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-30px);
+      }
+
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+
+    .bouncy-effect {
+      width: 50px;
+      height: 50px;
+      animation: bounce 1s infinite;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #ff0000;
+      /* Ganti dengan warna yang diinginkan */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="w-full h-28 z-20 bg-gradient-to-b from-white via-white to-transparent fixed flex items-center mt-[-15px]
+  ">
+    <!-- Mobile Nav -->
+    <div class="h-14 flex justify-start sm:hidden">
+      <input type="checkbox" id="cb" hidden>
+      <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+        <div class="mt-[0.9rem] ml-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none">
+            <path d="M3 3H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 14H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 25H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </div>
+      </label>
+      <ul
+        class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0"
+        id="myMenu">
+        <input type="checkbox" id="cb2" hidden>
+        <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="mb-5">
+            <path d="M3 3L27.0416 27.0416" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 27.0416L27.0416 3" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </label>
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="index.html#about" onclick="toggleMenu();">
+          <li>About</li>
+        </a>
+        <a href="product.html">
+          <li>Product</li>
+        </a>
+        <a href="index.html#customer" onclick="toggleMenu();">
+          <li>Customer</li>
+        </a>
+        <a href="service.html">
+          <li>Service</li>
+        </a>
+        <a href="index.html#contactus" onclick="toggleMenu();">
+          <li>Contact Us</li>
+        </a>
+      </ul>
+    </div>
+    <!-- Mobile Nav -->
+
+
+    <!-- Tablet Laptop Desktop -->
+    <div class="w-full flex justify-center relative pr-[3rem] sm:w-full sm:pr-0">
+      <div class="hidden w-full md:flex md:justify-center items-center md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40 ">
+          <li><a href="index.html" class="font-normal text-black hover:text-red-600 duration-300">Home</a></li>
+          <li><a href="#about" class="font-normal text-black hover:text-red-600 duration-300">About</a></li>
+          <li><a href="product.html" class="font-normal text-black hover:text-red-600 duration-300">Product</a></li>
+        </ul>
+      </div>
+      <img src="img/logo.png" id="logo" alt="" class="w-28 h-14 cursor-pointer">
+      <div class="hidden w-full md:flex justify-center items-center md:pl-2 md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40">
+          <li><a href="#customer" class="font-normal text-black hover:text-red-600 duration-300">Customer</a></li>
+          <li><a href="service.html" class="font-normal text-black hover:text-red-600 duration-300">Service</a></li>
+          <li><a href="#cus" class="font-normal text-black hover:text-red-600 duration-300">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Tablet Laptop Desktop -->
+  </nav>
+
+  <section class="w-full h-max bg-cover bg-center pt-36" style="background-image: url('img/backgroundnew.png'); ">
+    <div class="w-full h-max flex justify-center items-center mt-24 md:mb-4 lg:mt-36">
+      <h3 class="text-red-600 font-extrabold text-3xl tracking-wider mb-4 sm:mb-0 md:text-5xl lg:text-6xl text-center">
+        SENTOSA
+        SOLUTIONS</h3>
+    </div>
+    <div class="w-full h-max flex justify-center items-center px-16">
+      <p class="text-sm text-center italic mb-6 text-black lg:2xl">We are a System Integrator and provider of Digital
+        Solutions, Outsourcing, and Shared Services for companies in Indonesia.</p>
+    </div>
+    <div class="w-full h-[53vh] md:h-[68vh] lg:h-[47vh] flex justify-center pt-24 relative">
+      <div class="bouncy-effect">
+        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+          <g clip-path="url(#clip0_205_86)">
+            <path
+              d="M53.1562 27C53.1562 41.4492 41.4492 53.1562 27 53.1562C12.5508 53.1562 0.84375 41.4492 0.84375 27C0.84375 12.5508 12.5508 0.84375 27 0.84375C41.4492 0.84375 53.1562 12.5508 53.1562 27ZM38.0109 23.952L30.375 31.9148V12.6562C30.375 11.2535 29.2465 10.125 27.8438 10.125H26.1562C24.7535 10.125 23.625 11.2535 23.625 12.6562V31.9148L15.9891 23.952C15.0082 22.9289 13.3734 22.9078 12.3715 23.9098L11.2219 25.0699C10.2305 26.0613 10.2305 27.6645 11.2219 28.6453L25.207 42.641C26.1984 43.6324 27.8016 43.6324 28.7824 42.641L42.7781 28.6453C43.7695 27.6539 43.7695 26.0508 42.7781 25.0699L41.6285 23.9098C40.6266 22.9078 38.9918 22.9289 38.0109 23.952Z"
+              fill="#E0151B" />
+          </g>
+          <defs>
+            <clipPath id="clip0_205_86">
+              <rect width="54" height="54" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div
+        class="w-full h-20 fixed mt-40 pb-10 sm:pb-10 flex justify-end items-center pr-4 md:mt-[29rem] lg:mt-16 lg:pr-6">
+        <a href="https://wa.me/6281316018790/"><button
+            class="w-44 h-12 bg-red-600 text-white p-4 rounded-full duration-300">
+            <div class="w-full h-2 flex justify-center items-center">
+              <span class="mr-2 text-1xl">Live Chat</span>
+              <i class="fab fa-whatsapp text-4xl"></i>
+            </div>
+          </button></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="w-full h-max mb-24 bg-white">
+    <div class="w-full h-max mt-20 flex justify-center items-center mb-4 md:mt-32">
+      <p class="tracking-widest text-xl text-red-600 font-extrabold md:text-4xl lg:text-5xl text-center">WE ARE GLOBAL
+        PARTNER</p>
+    </div>
+    <div
+      class="w-full h-max grid grid-cols-2 gap-2 pl-6 py-5 mb-12 px-6 md:flex md:justify-center md:items-center md:gap-8 lg:gap-16 lg:flex lg:justify-center lg:items-center">
+      <img src="img/hprt.png" alt="" class="w-40 mb-4">
+      <img src="img/aiinside.png" alt="" class="w-40 mb-4">
+      <img src="img/microsoft.png" alt="" class="w-40 mb-4">
+      <img src="img/exact.png" alt="" class="w-40 mb-4">
+    </div>
+    <div
+      class="w-full h-40 px-4 py-2 flex mb-10 justify-center md:h-60 md:px-2 md:justify-center lg:justify-start lg:pl-40 xl:mb-12 xl:mt-9">
+      <div class="w-28 h-32 font-bold text-red-600 text-3xl md:text-6xl md:mr-20 lg:text-7xl lg:mr-32">
+        <h3>WHO</h3>
+        <h3>WE</h3>
+        <h3>ARE</h3>
+      </div>
+      <div
+        class="w-60 h-32 text-sm font-semibold text-[#757575] text-left md:w-80 md:h-40 md:text-lg lg:text-2xl lg:w-[40rem]">
+        <p>Sentosa Solutions was established in 2017. formerly GLM Sistem Indonesia.
+          We are currently a provider of Shared Services, Outsourcing, and digital e-commerce platforms for companies in
+          Indonesia.</p>
+      </div>
+    </div>
+    <div
+      class="w-full h-72 px-5 py-2 flex justify-center md:h-96 md:justify-center md:pr-20 md:px-2 lg:justify-end lg:pr-60">
+      <div
+        class="w-60 h-32 text-sm font-semibold text-red-600 text-right pr-2 md:w-80 md:h-40 md:text-lg lg:text-2xl lg:w-[40rem]">
+        <p>Actively contribute to the IT field in innovation and development of information system solutions.
+
+          Sharing experience expertise with other businesses and industries in a mutually beneficial scheme.
+
+          We also contribute to communities and countries to increase the adoption of digitalization to grow
+          competitiveness and make life easier.</p>
+      </div>
+      <div class="w-28 h-32 text-3xl font-bold text-[#757575] text-right md:text-6xl md:ml-10 lg:text-7xl lg:mr-20">
+        <h3>WHAT</h3>
+        <h3>WE</h3>
+        <h3>DO</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full h-max pt-10 mb-10 bg-[#E0151B] opacity-[36%] lg:mt-20 xl:mt-32">
+    <div
+      class="w-full h-max flex justify-center py-4 items-center text-white font-bold text-2xl tracking-widest md:text-4xl md:mb-5">
+      <h3>OUR SERVICE</h3>
+    </div>
+
+    <div class="w-full h-max mb-6">
+      <div class="w-full h-max py-4 text-white text-2xl font-semibold flex justify-center   mb-4 md:text-5xl md:mb-4">
+        <h3>#1 Digital Solution</h3>
+      </div>
+      <div
+        class="w-full h-max px-4 flex justify-center items-center text-center text-white text-lg mb-4 md:text-2xl md:px-28 lg:px-60">
+        <p>Consulting services are very important because they give clients the opportunity to make everything clear and
+          to help them create their own projects effortlessly.</p>
+      </div>
+      <div class="w-full h-40 pt-5 flex justify-center lg:pt-0">
+        <a href="service.html#ds"><button
+            class="border border-white text-white w-36 h-16 rounded-full px-2 text-xl font-semibold duration-300 hover:bg-white hover:text-[#E0151B]">Read
+            More</button></a>
+      </div>
+    </div>
+
+    <div class="w-full h-max mb-6">
+      <div class="w-full h-max text-white text-2xl font-semibold flex justify-center mb-4 md:text-5xl md:mb-4">
+        <h3>#2 AI Inside</h3>
+      </div>
+      <div
+        class="w-full h-max px-4 flex justify-center items-center text-center text-white text-lg mb-4 md:text-2xl md:px-28 lg:px-60">
+        <p>We are a global partner of AI inside providing services according to the steps from Digitization to Digital
+          Transformation (DX) in the business, and move your business forward from solving current issues to creating
+          new
+          businesses.</p>
+      </div>
+      <div class="w-full h-40 pt-5 flex justify-center lg:pt-0">
+        <a href="service.html#ai"><button
+            class="border border-white text-white w-36 h-16 rounded-full px-2 text-xl font-semibold duration-300 hover:bg-white hover:text-[#E0151B]">Read
+            More</button></a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="w-full h-max md:h-[200vh] lg:h-[220vh] lg:px-20">
+    <div id="customer"
+      class="w-full h-20  px-6 pt-16 flex justify-center items-center font-bold text-center sm:font-bold sm:tracking-wider md:text-2xl lg:text-3xl ">
+      <h3>SOME OF OUR SATISFIED <span class="text-red-600">CUSTOMERS</span></h3>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper w-full h-60 flex justify-center items-center">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide flex justify-center items-center"><img src="img/kheinz.png" alt="" class="w-72 h-20 ">
+        </div>
+        <div class="swiper-slide flex justify-center items-center"><img src="img/bkpm.png" alt="" class="w-60 "></div>
+        <div class="swiper-slide flex justify-center items-center"><img src="img/rohto.png" alt="" class="w-60 "></div>
+        <div class="swiper-slide flex justify-center items-center"><img src="img/umilia.png" alt="" class="w-28 ">
+        </div>
+        <div class="swiper-slide flex justify-center items-center"><img src="img/ubc.png" alt="" class="w-60 ">
+        </div>
+        <div class="swiper-slide flex justify-center items-center"><img src="img/gurecafe.jpg" alt=""
+            class="w-40 md:w-60 ">
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination text-red-600"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev hidden"></div>
+      <div class="swiper-button-next hidden"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar hidden"></div>
+    </div>
+
+    <div class="w-full h-20  my-6 flex justify-center items-center px-2">
+      <h3 class="font-bold text-lg text-center tracking-wide md:text-2xl">Let's embark on a transformative journey <span
+          class="text-red-600">together!</span></h3>
+    </div>
+    <div class="w-full h-20 lg:mb-28  flex justify-center">
+      <a href="product.html"><button
+          class="border-2  rounded-full w-72 h-12 font-semibold hover:border-none hover:bg-red-600 hover:text-white duration-300 md:w-80 md:h-16">See
+          Our Product</button></a>
+    </div>
+
+    <!-- mobile -->
+    <div id="contactus" class="w-full h-max px-4 py-2 md:px-10 lg:h-[50rem] lg:hidden">
+      <h1 class="text-center text-2xl font-bold tracking-wider my-4 md:text-4xl">CONTACT <span
+          class="text-red-600">US</span></h1>
+      <div class="w-full flex justify-center"><img src="img/alamat.jpg" alt=""
+          class="rounded-2xl py-2 lg:w-full lg:h-[30rem] lg:object-cover"></div>
+      <h3 class="font-bold mt-2 md:text-2xl">PT SENTOSA SOLUSI INDONESIA</h3>
+      <h4 class="font-semibold py-4 md:text-xl">Mensana Tower Lt 5 (voffice) JL Raya Kranggan Rt/Rw 002/016 Kel
+        Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h4>
+      <h3 class="font-thin md:text-lg">Phone: +62 21 29 557 336</h3>
+      <h3 class="font-thin md:text-lg">Email: <span class="text-red-600">support@sentosasolutions.com</span></h3>
+      <div class="w-full h-20 flex mt-1 items-center">
+        <h3 class="pr-4 md:text-xl">Ticketing System : </h3>
+        <a href="helpdesksentosa/index.php"><button
+            class="border-2  rounded-full w-52 h-12 px-2 font-semibold hover:border-none hover:bg-red-600 hover:text-white duration-300">CREATE
+            TICKET</button></a>
+      </div>
+    </div>
+    <!-- mobile -->
+
+
+    <!-- desktop -->
+    <div class="w-full h-max px-4 py-2 hidden lg:contents">
+      <h1 id="cus" class="text-center text-4xl font-bold tracking-wider mt-4 mb-12">CONTACT <span
+          class="text-red-600">US</span>
+      </h1>
+      <div class="w-full h-max rounded-lg flex">
+        <div class="w-[30rem] h-max  rounded-lg flex justify-start">
+          <img src="/img/alamat.jpg" alt="" class="w-full rounded-lg">
+        </div>
+        <div class="w-full h-max items-center pl-4">
+          <h3 class="font-bold mt-2 text-2xl">PT SENTOSA SOLUSI INDONESIA</h3>
+          <h4 class="font-semibold py-4 md:text-xl">Mensana Tower Lt 5 (voffice) JL Raya Kranggan Rt/Rw 002/016 Kel
+            Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h4>
+          <h3 class="font-thin md:text-lg">Phone: +62 21 29 557 336</h3>
+          <h3 class="font-thin md:text-lg">Email: <span class="text-red-600">support@sentosasolutions.com</span></h3>
+          <div class="w-full h-20 flex mt-1 items-center">
+            <h3 class="pr-4 md:text-xl">Ticketing System : </h3>
+            <a href="helpdesksentosa/index.php"><button
+                class="border-2  rounded-full w-52 h-12 px-2 font-semibold hover:border-none hover:bg-red-600 hover:text-white duration-300">CREATE
+                TICKET</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- desktop -->
+
+    <div class="w-full h-max px-4 flex justify-center mt-6 mb-10 lg:mb-0 md:mt-10 lg:mt-10">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15860.600784420078!2d106.9179325!3d-6.3746031!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x68cf31edd5a2b4f%3A0x1f00da26db7473ca!2sPT%20Sentosa%20Solusi%20Indonesia!5e0!3m2!1sid!2sid!4v1705085931623!5m2!1sid!2sid"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" class="md:w-full"></iframe>
+    </div>
+  </section>
+
+  <footer class="w-full h-max bg-[#393939] px-4 py-6 md:h-[20rem]">
+    <h1 class="font-bold text-xl text-white tracking-wide mb-4">PT Sentosa Solusi Indonesia</h1>
+    <h2 class="font-semibold text-xl text-white mb-4 tracking-wide">Mensana Tower Lt 5 (voffice) JL Raya Kranggan Rt/Rw
+      002/016 Kel Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h2>
+    <p class="text-sm text-white mb-4 tracking-wide">Phone: +62 21 29 557 336</p>
+    <p class="text-sm text-white mb-4 tracking-wide overflow-hidden">Email: support@sentosasolutions.com</p>
+    <h3 class="text-xl text-white text-center font-bold tracking-wide mt-7">© 2024 - PT Sentosa Solusi Indonesia </h3>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        dynamicBullets: true,
+      }
+    });
+
+    function myFunction(x) {
+      var checkbox = document.getElementById('cb2');
+      checkbox.checked = !checkbox.checked;
+      toggleMenu();
+    }
+    var gambar = document.getElementById("logo");
+
+    // Menambahkan event listener untuk menanggapi klik pada gambar
+    gambar.addEventListener("click", function () {
+      // Mengarahkan pengguna ke halaman lain
+      window.location.href = "index.html";
+    });
+
+    function toggleMenu() {
+      var menuList = document.getElementById('myMenu');
+      menuList.style.transform = menuList.style.transform === 'translateX(100%)' ? 'translateX(0)' : 'translateX(100%)';
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-..."></script>
+</body>
+</div>
+
+</html>
