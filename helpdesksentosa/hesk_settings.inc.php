@@ -5,7 +5,7 @@
 
 // --> General settings
 $hesk_settings['site_title']='PT SENTOSA SOLUSI INDONESIA';
-$hesk_settings['site_url']='http://localhost';
+$hesk_settings['site_url']='http://localhost/PTSentosaSolusiIndonesia/';
 $hesk_settings['hesk_title']='Sentosa Solutions';
 $hesk_settings['hesk_url']='http://localhost/PTSentosaSolusiIndonesia/helpdesksentosa';
 $hesk_settings['webmaster_mail']='support@example.com';

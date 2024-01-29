@@ -17,19 +17,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>
     * {
       font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
     }
 
-
-
-    #cb:checked~ul {
-      transform: translateX(0%);
+    span#procent {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 50px;
+      transform: translate(-50%, -50%);
+      color: black;
     }
 
-    #cb2:checked~ul {
-      transform: translateX(100%);
+    span#procent::after {
+      content: '%';
+    }
+
+    .canvas-wrap {
+      position: relative;
+      width: 300px;
+      height: 300px;
     }
   </style>
 </head>
@@ -40,7 +53,7 @@
     <!-- Mobile Nav -->
     <div class="h-14 flex justify-start sm:hidden">
       <input type="checkbox" id="cb" hidden>
-      <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+      <label for="cb" class="sm:hidden cursor-pointer">
         <div class="mt-[0.9rem] ml-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none">
             <path d="M3 3H37" stroke="black" stroke-width="5" stroke-linecap="round" />
@@ -50,52 +63,110 @@
         </div>
       </label>
       <ul
-        class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0">
+        class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0"
+        id="myMenu">
         <input type="checkbox" id="cb2" hidden>
-        <label for="cb" class="sm:hidden cursor-pointer" onclick="myFunction(this)">
+        <label for="cb" class="sm:hidden cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="mb-5">
             <path d="M3 3L27.0416 27.0416" stroke="black" stroke-width="5" stroke-linecap="round" />
             <path d="M3 27.0416L27.0416 3" stroke="black" stroke-width="5" stroke-linecap="round" />
           </svg>
         </label>
         <a href="index.html">
-          <li>Home</li>
+          <li class="hover:text-red-600 duration-300">Home</li>
         </a>
         <a href="index.html#about">
-          <li>About</li>
-        </a>
-        <a href="product.html">
-          <li>Product</li>
+          <li class="hover:text-red-600 duration-300">About</li>
         </a>
         <a href="index.html#customer">
-          <li>Customer</li>
+          <li class="hover:text-red-600 duration-300">Customer</li>
         </a>
-        <a href="service.html">
-          <li>Service</li>
-        </a>
+        <li class="cursor-pointer" onclick="toggleProductMenu()">
+          <p href="#" class="" id="productfocus"><span class="hover:text-red-600 duration-300 flex items-center">Product <span class="material-symbols-outlined">
+                expand_more
+                </span></span></p>
+          <ul id="productSubmenu" class="pl-4 hidden">
+            <a href="product.html">
+              <li class="hover:text-red-600 duration-300">Our Product</li>
+            </a>
+            <a href="product.html#ai">
+              <li class="hover:text-red-600 duration-300">AI Inside</li>
+            </a>
+            <a href="product.html#ds">
+              <li class="hover:text-red-600 duration-300">Digital Solution</li>
+            </a>
+            <a href="product.html#ao">
+              <li class="hover:text-red-600 duration-300">AP Automation</li>
+            </a>
+          </ul>
+        </li>
+        <li class="cursor-pointer" onclick="toggleSubMenu()">
+          <p href="#" class="" id="servicefocus"><span class="hover:text-red-600 duration-300 flex items-center">Service <span class="material-symbols-outlined">
+            expand_more
+            </span></span></p>
+          <ul id="serviceSubmenu" class="pl-4 hidden">
+            <a href="service.html">
+              <li class="hover:text-red-600 duration-300">Our Service</li>
+            </a>
+            <a href="service.html#si">
+              <li class="hover:text-red-600 duration-300">System Integration</li>
+            </a>
+            <a href="service.html#ss">
+              <li class="hover:text-red-600 duration-300">Shared Service</li>
+            </a>
+          </ul>
+        </li>
         <a href="index.html#contactus">
-          <li>Contact Us</li>
+          <li class="hover:text-red-600 duration-300">Contact Us</li>
         </a>
       </ul>
     </div>
     <!-- Mobile Nav -->
+
+
     <!-- Tablet Laptop Desktop -->
     <div class="w-full flex justify-center relative pr-[3rem] sm:w-full sm:pr-0">
       <div class="hidden w-full md:flex md:justify-center items-center md:pr-2">
         <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40 ">
           <li><a href="index.html" class="font-normal text-black hover:text-red-600 duration-300">Home</a></li>
           <li><a href="index.html#about" class="font-normal text-black hover:text-red-600 duration-300">About</a></li>
-          <li><a href="product.html" class="font-normal text-black hover:text-red-600 duration-300">Product</a></li>
+          <li><a href="index.html#customer" class="font-normal text-black hover:text-red-600 duration-300">Customer</a></li>
         </ul>
       </div>
       <img src="img/logo.png" id="logo" alt="" class="w-28 h-14 cursor-pointer">
       <div class="hidden w-full md:flex justify-center items-center md:pl-2 md:pr-2">
         <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40">
-          <li><a href="index.html#customer" class="font-normal text-black hover:text-red-600 duration-300">Customer</a>
+          <li id="productDropdown" class="relative group">
+            <a href="#"
+              class="text-black hover:text-red-600 focus:text-red-600 transition duration-300 md:flex md:items-center">Product
+              <span class="material-symbols-outlined">
+                expand_more
+                </span></a>
+            <div id="productMenu"
+              class="absolute hidden bg-white shadow-md mt-2 py-2 w-48 border rounded-lg group-hover:block">
+              <a href="product.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Our Product</a>
+              <a href="product.html#ai" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Artificial
+                Intelligence</a>
+              <a href="product.html#ds" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Digital
+                Solution</a>
+              <a href="product.html#ao" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">AP Automation</a>
+            </div>
           </li>
-          <li><a href="service.html" class="font-normal text-black hover:text-red-600 duration-300">Service</a></li>
-          <li><a href="index.html#contactus" class="font-normal text-black hover:text-red-600 duration-300">Contact</a>
+          <li id="serviceDropdown" class="relative group">
+            <a href="#"
+              class="text-black hover:text-red-600 focus:text-red-600 transition duration-300 md:flex md:items-center">Service
+              <span class="material-symbols-outlined">
+                expand_more
+                </span></a>
+            <div id="serviceMenu"
+              class="absolute hidden bg-white shadow-md mt-2 py-2 w-48 border rounded-lg group-hover:block">
+              <a href="service.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Our Service</a>
+              <a href="service.html#si" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">System
+                Integration</a>
+              <a href="service.html#ss" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Shared Service</a>
+            </div>
           </li>
+          <li><a href="index.html#cus" class="font-normal text-black hover:text-red-600 duration-300">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -110,36 +181,338 @@
       </div>
     </div>
 
-    <div class="w-full h-max mb-[0.40rem]">
-      <h3 class="text-2xl text-center font-semibold tracking-wider text-red-600">Product</h3>
+    <div class="w-full h-max mt-20 flex justify-center items-center mb-4 md:mt-32">
+      <p class="tracking-widest text-xl text-red-600 font-extrabold md:text-4xl lg:text-5xl text-center">WE ARE GLOBAL
+        PARTNER</p>
+    </div>
+    <div class="w-full h-max pl-6 py-5 mb-12 px-6 md:pt-20">
+      <div class="flex justify-center"><img src="img/hprt.png" data-aos="fade-right" data-aos-offset="300"
+          data-aos-easing="ease-in-sine" data-aos-duration="500" alt="" class="w-40 mb-7 md:w-80 md:mb-20"></div>
+      <div class="flex justify-center"><img src="img/aiinside.png" data-aos="fade-left" data-aos-offset="320"
+          data-aos-easing="ease-in-sine" data-aos-duration="500" alt="" class="w-40 mb-7 md:w-80 md:mb-20"></div>
+      <div class="flex justify-center"><img src="img/microsoft.png" data-aos="fade-right" data-aos-offset="330"
+          data-aos-easing="ease-in-sine" data-aos-duration="500" alt="" class="w-40 mb-7 md:w-80 md:mb-20"></div>
+      <div class="flex justify-center"><img src="img/exact.png" data-aos="fade-left" data-aos-offset="340"
+          data-aos-easing="ease-in-sine" data-aos-duration="500" alt="" class="w-40 mb-4 md:w-80 md:mb-20"></div>
+    </div>
+  </section>
+
+  <section id="ai" class="w-full h-max mb-40">
+    <div class="w-full h-max mb-10">
+      <div class="w-full h-max flex text-2xl justify-center text-center font-semibold text-slate-600 mb-4 md:text-4xl">
+        <h3><span class="text-red-600 font-bold">Artificial </span>Intelligence With</h3>
+      </div>
+      <div class="w-full h-max flex justify-center mb-4">
+        <img data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="400"
+          src="img/aiinsd.png" alt="" class="w-52 md:w-72">
+      </div>
+      <div class="w-full h-max text-center flex justify-center px-6 md:px-10 md:text-xl">
+        <p>We are a global partner of AI inside providing services according to the steps from Digitization to
+          Digital Transformation (DX) in the business, and move your business forward from solving current
+          issues to creating new businesses. By providing detailed services to solve issues and create new
+          businesses, AI inside will realize our mission “To bring AI to every being in the world and
+          contribute to a richer future society.”</p>
+      </div>
     </div>
 
-    <div class="flex justify-center mb-6">
-      <div class="w-24 h-1 bg-red-600 rounded-full"></div>
-    </div>
+    <!-- Mobile -->
+    <div class="md:hidden">
+      <div class="w-full h-max mb-10">
+        <div class="w-full h-max flex justify-center mb-6">
+          <img src="img/dxsuite.png" alt="" class="w-40">
+        </div>
+        <div class="w-full h-max flex justify-center mb-4">
+          <img src="img/comp.png" alt="" class="w-60">
+        </div>
+        <div class="w-full h-max text-lg flex justify-center text-center px-6">
+          <p>Digitize a wide variety of documents with high accuracy. Manual input of handwritten, typed,
+            faxed, or
+            photographed documents are no longer needed. The AI-OCR engine is pre-trained and ready for
+            immediate
+            use.</p>
+        </div>
+      </div>
 
-    <div class="w-full h-max px-4 flex justify-center">
-      <div class="grid grid-cols-1 gap-5 mb-20">
-        <!--  -->
-        <a href="apautomation.html">
-          <div
-            class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
-            <div class="h-80 w-72">
-              <img
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="img/apautomationpost.png" alt="" />
+      <div class="w-full h-max mb-10">
+        <div class="w-full h-max flex justify-center mb-6">
+          <img src="img/lcvai.png" alt="" class="w-64">
+        </div>
+        <div class="w-full h-max flex justify-center mb-4">
+          <img src="img/recognation.png" alt="" class="w-60">
+        </div>
+        <div class="w-full h-max text-lg flex justify-center text-center px-6">
+          <p>Make predictions and decisions for business possible with no code AI. A business AI tool that
+            allows you to easily create highly accurate image recognition and object detection AI models
+            that fit into your business.</p>
+        </div>
+      </div>
+
+      <div class="w-full h-max mb-10">
+        <div class="w-full h-max flex justify-center mb-6">
+          <img src="img/lcforecast.png" alt="" class="w-64">
+        </div>
+        <div class="w-full h-max flex justify-center mb-4">
+          <img src="img/lcf.png" alt="" class="w-60">
+        </div>
+        <div class="w-full h-max text-lg flex justify-center text-center px-6">
+          <p>Make business predictions and decisions with AI possible without code. A business AI tool that
+            allows non-experts to use AI to make predictions and decisions by simply clicking in a browser.
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full h-max mb-10">
+        <div class="w-full h-max flex justify-center mb-6">
+          <img src="img/aicube.png" alt="" class="w-40">
+        </div>
+        <div class="w-full h-max flex justify-center mb-4">
+          <img src="img/aicubeproduct.png" alt="" class="w-60">
+        </div>
+        <div class="w-full h-max text-lg flex justify-center text-center px-6">
+          <p>AI inside Cube is an edge computer created to achieve any sort of AI operation through powerful
+            GPU hardware and AI inside’s proprietary AI management OS and software.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+
+    <div class="hidden md:contents">
+      <div class="w-full h-max px-6 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div class="md:flex md:justify-center">
+          <div class="w-[30rem] h-56 rounded-lg flex shadow-xl border md:w-max">
+            <div class="w-56 h-56 flex justify-start">
+              <img src="img/comp.png" alt="" class="h-56 object-cover rounded-l-lg">
             </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
-            </div>
-            <div
-              class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-              <h1 class="font-dmserif text-3xl font-bold text-white">AP Automation</h1>
+            <div class="w-96 h-max">
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <img src="img/dxsuite.png" alt="">
+              </div>
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <p>Digitize a wide variety of documents with high accuracy. Manual input of handwritten,
+                  typed, faxed, or
+                  photographed documents are no longer needed. The AI-OCR engine is pre-trained and
+                  ready
+                  for immediate
+                  use.</p>
+              </div>
             </div>
           </div>
-        </a>
-        <!--  -->
+        </div>
+
+        <div class="md:flex md:justify-center">
+          <div class="w-[30rem] h-56 rounded-lg flex shadow-xl border md:w-max">
+            <div class="w-56 h-56 flex justify-start">
+              <img src="img/recognation.png" alt="" class="h-56 object-cover rounded-l-lg">
+            </div>
+            <div class="w-96 h-max">
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <img src="img/lcvai.png" alt="">
+              </div>
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <p>Make predictions and decisions for business possible with no code AI. A business AI
+                  tool
+                  that allows you to easily create highly accurate image recognition and object
+                  detection
+                  AI models that fit into your business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:flex md:justify-center">
+          <div class="w-[30rem] h-56 rounded-lg flex shadow-xl border md:w-max">
+            <div class="w-56 h-56 flex justify-start">
+              <img src="img/lcf.png" alt="" class="h-56 object-cover rounded-l-lg">
+            </div>
+            <div class="w-96 h-max">
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <img src="img/lcforecast.png" alt="">
+              </div>
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <p>Make business predictions and decisions with AI possible without code. A business AI
+                  tool
+                  that allows non-experts to use AI to make predictions and decisions by simply
+                  clicking
+                  in a browser.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:flex md:justify-center">
+          <div class="w-[30rem] h-56 rounded-lg flex shadow-xl border md:w-max">
+            <div class="w-56 h-56 flex justify-start">
+              <img src="img/aicubeproduct.png" alt="" class="h-56 object-cover rounded-l-lg">
+            </div>
+            <div class="w-96 h-max">
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <img src="img/aicube.png" alt="">
+              </div>
+              <div class="w-96 h-max flex justify-start pl-4 py-4">
+                <p>AI inside Cube is an edge computer created to achieve any sort of AI operation
+                  through
+                  powerful GPU hardware and AI inside’s proprietary AI management OS and software.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="ds" class="wfull h-max mb-40">
+    <div class="w-full h-max flex justify-center mb-5 lg:mt-20 lg:mb-10">
+      <h3 class="text-2xl font-bold text-red-600 md:text-4xl">Digital <span
+          class="text-slate-600 font-semibold">Solution</span>
+      </h3>
+    </div>
+    <div class="w-full h-max mb-4">
+      <div class="w-full h-20 flex justify-center items-center text-center  px-2 md:text-2xl">
+        <h3><span class="text-red-600 font-semibold">Exact Globe is the basis for </span>our Finance and ERP
+          software</h3>
+      </div>
+
+      <div class="w-full h-max flex justify-center items-center text-center mb-4  md:mb-8">
+        <img src="img/fg.png" alt="" class="w-72 md:w-[27rem]">
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+        <ul>
+          <li>* Best-in-class financial administration</li>
+          <li>* Integrate all financial and operational processes, create insight and control</li>
+          <li>* Extensions for project, manufacturing and logistics inc. WMS, service management and portals
+          </li>
+          <li>* Full integration with Exact for HRM, CRM and BPM</li>
+          <li>* International business software with language and legislation for more than 40 countries</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w-full h-max mb-4">
+      <div class="w-full h-20 flex justify-center items-center text-center  px-2 mb-4 md:text-2xl">
+        <h3><span class="text-red-600 font-semibold">Exact Synergy Integrating business </span>processes with
+          your ERP</h3>
+      </div>
+
+      <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+        <img src="img/nb.png" alt="" class="w-72 md:w-[27rem]">
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl md:px-20">
+        <p>Exact Synergy is the right platform to handle all your business processes and integrate them with
+          your ERP system. An ideal, centralized solution for easier online collaboration through strong
+          workflow and document management.</p>
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+        <p class="font-bold">Link business processes to Workflow Management</p>
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+        <p>Applying workflow management allows you to easily streamline and automate processes all through your
+          organization. Information links to the correct project, customer, or employee immediately and is
+          available when and where it’s needed.</p>
+      </div>
+    </div>
+
+    <div class="w-full h-max mb-4">
+      <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+        <img src="img/ac.png" alt="" class="w-72 md:w-[27rem]">
+      </div>
+      <div class="w-full h-max text-center flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+        <p class="font-bold">Use CRM to ensure all information about the customer is correct and complete</p>
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+        <p>Use a single CRM system for full insights into customer relationships. Including via the app. See all
+          important data relating to the customer, from contact moments to invoicing. Receive automated alerts
+          for sales opportunities or service moments.</p>
+      </div>
+    </div>
+
+    <div class="w-full h-max mb-4">
+      <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+        <img src="img/Screenshot-2022-01-29-210330-removebg-preview 1.png" alt="" class="w-72 md:w-[27rem]">
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+        <p class="font-bold">Streamline your HR life cycle with HRM</p>
+      </div>
+      <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+        <p>Recording employee leave, expenses and sickness absence – all these administrative tasks take up HR
+          managers’ time unnecessarily. Exact streamlines your full HR life cycle, from payroll administration
+          and personnel planning to performance management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ao" class="wfull h-max mb-40">
+    <div class="w-full h-max flex justify-center mb-5 lg:mt-20 lg:mb-10">
+      <h3 class="text-2xl font-bold text-red-600 md:text-4xl">AP <span
+          class="text-slate-600 font-semibold">Automation</span>
+      </h3>
+    </div>
+
+    <div class="w-full h-max flex justify-center py-4">
+      <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">What Is <span
+          class="font-semibold text-gray-600">AP Automation</span></h3>
+    </div>
+
+    <div class="w-full h-max flex justify-center px-4 mb-6 lg:px-32">
+      <div class="w-max md:text-2xl">
+        <p class="text-center font-semibold text-gray-600">comes with advanced technology to supports the
+          AP-Accounts Payable process at your organization by simplifying the process through digitization,
+          automation and integrated to your ERP System.</p>
+      </div>
+    </div>
+
+
+    <div class="">
+      <div class="h-max flex justify-center items-start overflow-hidden">
+        <div class="canvas-wrap">
+          <canvas id="canvas" width="300" height="300"></canvas>
+          <span id="procent"></span>
+        </div>
+      </div>
+      <div class="w-full h-max flex justify-center mb-4">
+        <h3 class="font-bold text-2xl text-red-600 lg:text-3xl tracking-widest">By 2025</h3>
+      </div>
+    </div>
+
+    <div class="w-full h-max flex justify-center px-4 mb-10 lg:px-32 lg:mb-20">
+      <div class="w-max md:text-2xl">
+        <p class="text-center font-semibold text-gray-600">50% of business-to-business invoices worldwide will
+          be processed and paid without manual intervention</p>
+      </div>
+    </div>
+
+    <div class="w-full h-max flex justify-center py-4 md:mb-5">
+      <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">Benefit <span
+          class="font-semibold text-gray-600">AP Automation</span></h3>
+    </div>
+
+    <div
+      class="w-full h-max overflow-hidden flex justify-center items-center bg-gradient-to-l from-red-400 to-white py-4 md:h-32">
+      <h3 data-aos="fade-right" data-aos-duration="1000"
+        class="font-bold text-lg text-slate-600 lg:text-3xl tracking-wide">REDUCE DATA ENTRY</h3>
+    </div>
+    <div
+      class="w-full h-max flex overflow-hidden justify-center items-center bg-gradient-to-r from-red-300 to-white py-4 md:h-32">
+      <h3 data-aos="fade-left" data-aos-duration="1000"
+        class="font-bold text-lg text-slate-700 lg:text-3xl tracking-wide">REDUCE FRAUD</h3>
+    </div>
+    <div
+      class="w-full h-max flex overflow-hidden justify-center items-center bg-gradient-to-l from-red-400 to-white py-4 mb-10 md:h-32 md:mb-20">
+      <h3 data-aos="fade-right" data-aos-duration="1000"
+        class="font-bold text-lg text-slate-800 lg:text-3xl tracking-wide">IMPROVE APPROVAL TIME</h3>
+    </div>
+
+    <div class="w-full h-max flex justify-center py-4 md:mb-5">
+      <h3 class="font-bold text-xl text-red-600 lg:text-3xl tracking-wide">Demo <span
+          class="font-semibold text-gray-600">Application</span></h3>
+    </div>
+
+    <div class="w-full h-max flex justify-center py-4 px-4">
+      <img src="/img/documentupload.png" alt="" class="rounded md:w-[70rem] md:rounded-xl md:mb-5">
+    </div>
+
+    <div class="w-full h-max flex justify-center py-4 px-4 mb-20">
+      <img src="/img/grafik.png" alt="" class="rounded md:w-[70rem] md:rounded-xl">
     </div>
   </section>
 
@@ -152,6 +525,7 @@
     <h3 class="text-xl text-white text-center font-bold tracking-wide mt-7">© 2024 - PT Sentosa Solusi Indonesia </h3>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     // Mengambil elemen gambar dengan id "gambarKlik"
     var gambar = document.getElementById("logo");
@@ -161,6 +535,162 @@
       // Mengarahkan pengguna ke halaman lain
       window.location.href = "index.html";
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fungsi yang akan dipanggil ketika elemen target terlihat
+      function loadScript() {
+        var can = document.getElementById('canvas'),
+          spanProcent = document.getElementById('procent'),
+          c = can.getContext('2d');
+
+        var posX = can.width / 2,
+          posY = can.height / 2,
+          fps = 1000 / 200,
+          procent = 0,
+          oneProcent = 360 / 100,
+          result = oneProcent * 50;
+
+        c.lineCap = 'round';
+        arcMove();
+
+        function arcMove() {
+          var deegres = 0;
+          var acrInterval = setInterval(function () {
+            deegres += 1;
+            c.clearRect(0, 0, can.width, can.height);
+            procent = deegres / oneProcent;
+
+            spanProcent.innerHTML = procent.toFixed();
+
+            c.beginPath();
+            c.arc(posX, posY, 70, (Math.PI / 180) * 270, (Math.PI / 180) * (270 + 360));
+            c.strokeStyle = '#b1b1b1';
+            c.lineWidth = '20';
+            c.stroke();
+
+            c.beginPath();
+            c.strokeStyle = '#00B3FF';
+            c.lineWidth = '20';
+            c.arc(posX, posY, 70, (Math.PI / 180) * 270, (Math.PI / 180) * (270 + deegres));
+            c.stroke();
+            if (deegres >= result) clearInterval(acrInterval);
+          }, fps);
+        }
+      }
+
+      // Mengamati elemen target
+      var targetElement = document.getElementById("ao");
+
+      var observer = new IntersectionObserver(function (entries, observer) {
+        // Periksa apakah elemen target masuk ke dalam viewport
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // Panggil fungsi loadScript() jika elemen terlihat
+            loadScript();
+            // Berhenti mengamati elemen setelah dijalankan sekali
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0 }); // Membuat observer terpanggil saat setengah dari elemen target terlihat
+
+      // Mulai mengamati elemen target
+      observer.observe(targetElement);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const cb = document.getElementById('cb');
+      const cb2 = document.getElementById('cb2');
+      const myMenu = document.getElementById('myMenu');
+
+      cb.addEventListener('change', function () {
+        if (this.checked) {
+          myMenu.style.transform = 'translateX(0)';
+        } else {
+          myMenu.style.transform = 'translateX(30rem)';
+        }
+      });
+
+      cb2.addEventListener('change', function () {
+        if (this.checked) {
+          myMenu.style.transform = 'translateX(100%)';
+        } else {
+          myMenu.style.transform = 'translateX(0)';
+        }
+      });
+
+      const menuLinks = myMenu.querySelectorAll('a');
+      menuLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          myMenu.style.transform = 'translateX(100%)';
+          cb.checked = false; // Uncheck cb2 if any link is clicked
+        });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var serviceDropdown = document.getElementById("serviceDropdown");
+      var serviceMenu = document.getElementById("serviceMenu");
+
+      serviceDropdown.addEventListener("click", function (event) {
+        event.stopPropagation();
+        serviceMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("#serviceDropdown")) {
+          serviceMenu.classList.add("hidden");
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var productDropdown = document.getElementById("productDropdown");
+      var productMenu = document.getElementById("productMenu");
+
+      productDropdown.addEventListener("click", function (event) {
+        event.stopPropagation();
+        productMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("#productDropdown")) {
+          productMenu.classList.add("hidden");
+        }
+      });
+    });
+
+    function toggleSubMenu() {
+      var submenu = document.getElementById("serviceSubmenu");
+      var sf = document.getElementById("servicefocus");
+      if (submenu.classList.contains("hidden")) {
+        submenu.classList.remove("hidden");
+        submenu.classList.add("block");
+        sf.classList.add("text-red-600");
+      } else {
+        submenu.classList.remove("block");
+        submenu.classList.add("hidden");
+        sf.classList.remove("text-red-600");
+      }
+    }
+
+    function toggleProductMenu() {
+      var submenu2 = document.getElementById("productSubmenu");
+      var pf = document.getElementById("productfocus");
+
+      if (submenu2.classList.contains("hidden")) {
+        submenu2.classList.remove("hidden");
+        submenu2.classList.add("block");
+        pf.classList.add("text-red-600");
+      } else {
+        submenu2.classList.remove("block");
+        submenu2.classList.add("hidden");
+        pf.classList.remove("text-red-600");
+      }
+    }
+
+  </script>
+  <script>
+    AOS.init();
   </script>
 </body>
 </div>

@@ -1,0 +1,144 @@
+<!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper pb-10">
+        <!-- Slides -->
+        <div class="swiper-slide flex justify-center px-5 lg:px-20" lazy="true">
+          <div class="w-full h-[33rem] border rounded-lg shadow-xl bg-white">
+            <div class="w-full h-max rounded-lg md:hidden">
+              <img src="img/it-plan.png" alt="" class="w-full h-36 md:h-52 object-cover rounded-t-lg">
+            </div>
+            <div class="w-full h-max rounded-lg hidden md:contents">
+              <img src="img/bannersi.png" alt="" class="w-full h-36 md:h-52 object-cover rounded-t-lg">
+            </div>
+            <div
+              class="w-full h-10 flex justify-center items-center text-red-600 font-bold tracking-wide md:text-2xl md:py-8">
+              <h3>Plan Training & Supervision</h3>
+            </div>
+            <div class="w-full h-max flex text-black px-2 mb-4 md:text-xl md:px-4">
+              <h3>Delegate ICT planning, training, and supervision to us for seamless technology adoption in your
+                business transformation.</h3>
+            </div>
+            <div class="w-full h-32 flex text-black px-2 font-semibold md:px-4">
+              <ul>
+                <li>*ICT Master Plan</li>
+                <li>*ICT Infrastructure Solution Architect</li>
+                <li>*ICT Training Service</li>
+                <li>*ERP Planning & Implementation</li>
+                <li>*ERP Extended Application</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide flex justify-center px-5 lg:px-20" lazy="true">
+          <div class="w-full h-[33rem] border rounded-lg shadow-xl bg-white">
+            <div class="w-full h-max rounded-lg">
+              <img src="img/jkjk.png" alt="" class="w-full h-36 object-cover md:h-52 rounded-t-lg">
+            </div>
+            <div
+              class="w-full h-10 flex justify-center items-center text-red-600 font-bold tracking-wide md:text-2xl md:py-8">
+              <h3>Hardware & Software</h3>
+            </div>
+            <div class="w-full h-max flex text-black px-2 mb-4 md:px-4 md:text-xl">
+              <h3>Get reliable and trusted services for the fulfillment of your company’s IT solutions, both
+                hardware and software. We provide integrated IT solutions with the best quality and price.</h3>
+            </div>
+            <div class="w-full h-32 flex text-black px-2 font-semibold md:px-4">
+              <ul>
+                <li>*Network & Infrastructure</li>
+                <li>*Smart Office & Multimedia Appliances</li>
+                <li>*End User Computing</li>
+                <li>*Software Licenses</li>
+                <li>*Industrial Internet of Things</li>
+                <li>*Cloud Computing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide flex justify-center px-5 lg:px-20" lazy="true">
+          <div class="w-full h-[33rem] border rounded-lg shadow-xl bg-white">
+            <div class="w-full h-max rounded-lg">
+              <img src="img/app-development.png" alt="" class="w-full h-36 md:h-52 object-cover rounded-t-lg">
+            </div>
+            <div
+              class="w-full h-10 flex justify-center items-center text-red-600 font-bold tracking-wide md:text-2xl md:py-8">
+              <h3>Application Development</h3>
+            </div>
+            <div class="w-full h-max flex text-black px-2 mb-4 md:px-4 md:text-xl">
+              <h3>Is an application development service that suits business needs. This service will encourage
+                companies to transform and have more practical business processes and keep up with the latest
+                technological developments.</h3>
+            </div>
+            <div class="w-full h-32 flex text-black px-2 font-semibold md:px-4">
+              <ul>
+                <li>*Web Based/ Desktop Application</li>
+                <li>*Mobile Application</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide flex justify-center px-5 lg:px-20" lazy="true">
+          <div class="w-full h-[33rem] border rounded-lg shadow-xl bg-white">
+            <div class="w-full h-max rounded-t-lg md:hidden">
+              <img src="img/Business-Strategy-Oriented-Software-House-Indonesia-scaled-e1587315228965-300x300-2.webp"
+                alt="" class="w-full h-36 md:h-52 object-cover rounded-t-lg">
+            </div>
+            <div class="w-full h-max rounded-lg hidden md:contents">
+              <img src="img/bannerba.png" alt="" class="w-full h-36 md:h-52 object-cover rounded-t-lg">
+            </div>
+            <div
+              class="w-full h-10 flex justify-center items-center text-red-600 font-bold tracking-wide md:text-2xl md:py-8">
+              <h3>Business Analytic</h3>
+            </div>
+            <div class="w-full h-max flex text-black pl-2 mb-4 md:px-4 md:text-xl">
+              <h3>Welcome the Industry 4.0 era and increase your company’s competitive advantage with our reliable
+                and trusted Big Data & Analytical solutions.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev text-red-600"></div>
+      <div class="swiper-button-next text-red-600"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar hidden"></div>
+    </div>
+
+    asjdaskhashdjkashdjkashdjashdasjkhajsdasjkdhajsk
+
+    <div class="w-full h-max mb-[0.40rem]">
+      <h3 class="text-2xl text-center font-semibold tracking-wider text-red-600">Product</h3>
+    </div>
+
+    <div class="flex justify-center mb-6">
+      <div class="w-24 h-1 bg-red-600 rounded-full"></div>
+    </div>
+
+    <div class="w-full h-max px-4 flex justify-center">
+      <div class="grid grid-cols-1 gap-5 mb-20">
+        <!--  -->
+        <a href="apautomation.html">
+          <div
+            class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+            <div class="h-80 w-72">
+              <img
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                src="img/apautomationpost.png" alt="" />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+            </div>
+            <div
+              class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+              <h1 class="font-dmserif text-3xl font-bold text-white">AP Automation</h1>
+            </div>
+          </div>
+        </a>
+        <!--  -->
+      </div>
+    </div>
