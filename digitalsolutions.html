@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT SENTOSA SOLUSI INDONESIA - We are a System Integrator and provider of Digital Solutions, Outsourcing, and Shared Services for companies in Indonesia.</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="ico/site.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+
+        #cb:checked~ul {
+            transform: translateX(0%);
+        }
+
+        #cb2:checked~ul {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full h-28 z-20 bg-gradient-to-b from-white via-white to-transparent fixed flex items-center mt-[-15px]
+  ">
+    <!-- Mobile Nav -->
+    <div class="h-14 flex justify-start sm:hidden">
+      <input type="checkbox" id="cb" hidden>
+      <label for="cb" class="sm:hidden cursor-pointer">
+        <div class="mt-[0.9rem] ml-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45" fill="none">
+            <path d="M3 3H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 14H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 25H37" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </div>
+      </label>
+      <ul
+        class="translate-x-[30rem] leading-[70px] z-20 fixed h-[100vh] w-[100%] transition-all duration-300 text-left font-normal text-2xl bg-white pl-4 pt-4 sm:transition-none sm:relative sm:flex sm:w-fit sm:h-0 sm:text-white sm:top-0 sm:mr-32 sm:left-0"
+        id="myMenu">
+        <input type="checkbox" id="cb2" hidden>
+        <label for="cb" class="sm:hidden cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none" class="mb-5">
+            <path d="M3 3L27.0416 27.0416" stroke="black" stroke-width="5" stroke-linecap="round" />
+            <path d="M3 27.0416L27.0416 3" stroke="black" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </label>
+        <a href="index.html">
+          <li class="hover:text-red-600 duration-300">Home</li>
+        </a>
+        <a href="index.html#about">
+          <li class="hover:text-red-600 duration-300">About</li>
+        </a>
+        <a href="index.html#customer">
+          <li class="hover:text-red-600 duration-300">Customer</li>
+        </a>
+        <li class="cursor-pointer" onclick="toggleProductMenu()">
+          <p href="#" class="" id="productfocus"><span class="hover:text-red-600 duration-300 flex items-center">Product
+              <span class="material-symbols-outlined">
+                expand_more
+              </span></span></p>
+          <ul id="productSubmenu" class="pl-4 hidden">
+            <a href="apautomation.html">
+              <li class="hover:text-red-600 duration-300">AP Automation</li>
+            </a>
+            <a href="artificialintelligence.html">
+              <li class="hover:text-red-600 duration-300">AI Inside</li>
+            </a>
+            <a href="digitalsolutions.html">
+              <li class="hover:text-red-600 duration-300">Digital Solution</li>
+            </a>
+          </ul>
+        </li>
+        <li class="cursor-pointer" onclick="toggleSubMenu()">
+          <p href="#" class="" id="servicefocus"><span class="hover:text-red-600 duration-300 flex items-center">Service
+              <span class="material-symbols-outlined">
+                expand_more
+              </span></span></p>
+          <ul id="serviceSubmenu" class="pl-4 hidden">
+            <a href="service.html">
+              <li class="hover:text-red-600 duration-300">Our Service</li>
+            </a>
+            <a href="service.html#si">
+              <li class="hover:text-red-600 duration-300">System Integration</li>
+            </a>
+            <a href="service.html#ss">
+              <li class="hover:text-red-600 duration-300">Shared Service</li>
+            </a>
+          </ul>
+        </li>
+        <a href="index.html#contactus">
+          <li class="hover:text-red-600 duration-300">Contact Us</li>
+        </a>
+      </ul>
+    </div>
+    <!-- Mobile Nav -->
+
+
+    <!-- Tablet Laptop Desktop -->
+    <div class="w-full flex justify-center relative pr-[3rem] sm:w-full sm:pr-0">
+      <div class="hidden w-full md:flex md:justify-center items-center md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40 ">
+          <li><a href="index.html" class="font-normal text-black hover:text-red-600 duration-300">Home</a></li>
+          <li><a href="index.html#about" class="font-normal text-black hover:text-red-600 duration-300">About</a></li>
+          <li><a href="index.html#customer" class="font-normal text-black hover:text-red-600 duration-300">Customer</a></li>
+        </ul>
+      </div>
+      <img src="img/logo.png" id="logo" alt="" class="w-28 h-14 cursor-pointer">
+      <div class="hidden w-full md:flex justify-center items-center md:pl-2 md:pr-2">
+        <ul class="flex sm:space-x-16 lg:space-x-20 xl:space-x-40">
+          <li id="productDropdown" class="relative group">
+            <a href="#"
+              class="text-black hover:text-red-600 focus:text-red-600 transition duration-300 md:flex md:items-center">Product
+              <span class="material-symbols-outlined">
+                expand_more
+              </span></a>
+            <div id="productMenu"
+              class="absolute hidden bg-white shadow-md mt-2 py-2 w-48 border rounded-lg group-hover:block">
+              <a href="apautomation.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">AP Automation</a>
+              <a href="artificialintelligence.html"
+                class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Artificial
+                Intelligence</a>
+              <a href="digitalsolutions.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Digital
+                Solution</a>
+            </div>
+          </li>
+          <li id="serviceDropdown" class="relative group">
+            <a href="#"
+              class="text-black hover:text-red-600 focus:text-red-600 transition duration-300 md:flex md:items-center">Service
+              <span class="material-symbols-outlined">
+                expand_more
+              </span></a>
+            <div id="serviceMenu"
+              class="absolute hidden bg-white shadow-md mt-2 py-2 w-48 border rounded-lg group-hover:block">
+              <a href="service.html" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Our Service</a>
+              <a href="service.html#si" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">System
+                Integration</a>
+              <a href="service.html#ss" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Shared Service</a>
+            </div>
+          </li>
+          <li><a href="index.html#cus" class="font-normal text-black hover:text-red-600 duration-300">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Tablet Laptop Desktop -->
+  </nav>
+
+    <section class="w-full h-max pt-24 mb-20">
+        <div class="w-full h-40 bg-gradient-to-l from-red-400 to-white flex justify-start items-center mb-8 md:h-60">
+            <div class="w-full h-max text-3xl font-bold tracking-wider pl-6 md:text-4xl lg:text-5xl">
+                <h1 class="text-red-600">Digital</h1>
+                <h1 class="text-gray-600">Solution</h1>
+            </div>
+        </div>
+
+        <div class="w-full h-max mb-4">
+            <div class="w-full h-20 flex justify-center items-center text-center  px-2 md:text-2xl">
+                <h3><span class="text-red-600 font-semibold">Exact Globe is the basis for </span>our Finance and ERP
+                    software</h3>
+            </div>
+
+            <div class="w-full h-max flex justify-center items-center text-center mb-4  md:mb-8">
+                <img src="img/fg.png" alt="" class="w-72 md:w-[27rem]">
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+                <ul>
+                    <li>* Best-in-class financial administration</li>
+                    <li>* Integrate all financial and operational processes, create insight and control</li>
+                    <li>* Extensions for project, manufacturing and logistics inc. WMS, service management and portals
+                    </li>
+                    <li>* Full integration with Exact for HRM, CRM and BPM</li>
+                    <li>* International business software with language and legislation for more than 40 countries</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-full h-max mb-4">
+            <div class="w-full h-20 flex justify-center items-center text-center  px-2 mb-4 md:text-2xl">
+                <h3><span class="text-red-600 font-semibold">Exact Synergy Integrating business </span>processes with your ERP</h3>
+            </div>
+
+            <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+                <img src="img/nb.png" alt="" class="w-72 md:w-[27rem]">
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl md:px-20">
+                <p>Exact Synergy is the right platform to handle all your business processes and integrate them with your ERP system. An ideal, centralized solution for easier online collaboration through strong workflow and document management.</p>
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+                <p class="font-bold">Link business processes to Workflow Management</p>
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+                <p>Applying workflow management allows you to easily streamline and automate processes all through your organization. Information links to the correct project, customer, or employee immediately and is available when and where it’s needed.</p>
+            </div>
+        </div>
+
+        <div class="w-full h-max mb-4">
+            <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+                <img src="img/ac.png" alt="" class="w-72 md:w-[27rem]">
+            </div>
+            <div class="w-full h-max text-center flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+                <p class="font-bold">Use CRM to ensure all information about the customer is correct and complete</p>
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+                <p>Use a single CRM system for full insights into customer relationships. Including via the app. See all important data relating to the customer, from contact moments to invoicing. Receive automated alerts for sales opportunities or service moments.</p>
+            </div>
+        </div>
+
+        <div class="w-full h-max mb-4">
+            <div class="w-full h-max flex justify-center items-center text-center mb-4 ">
+                <img src="img/Screenshot-2022-01-29-210330-removebg-preview 1.png" alt="" class="w-72 md:w-[27rem]">
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-4  justify-center items-center md:text-xl">
+                <p class="font-bold">Streamline your HR life cycle with HRM</p>
+            </div>
+            <div class="w-full h-max flex px-4 text-base mb-20  justify-center items-center md:text-xl md:px-20">
+                <p>Recording employee leave, expenses and sickness absence – all these administrative tasks take up HR managers’ time unnecessarily. Exact streamlines your full HR life cycle, from payroll administration and personnel planning to performance management.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="w-full h-max bg-[#393939] px-4 py-6 md:h-[20rem]">
+        <h1 class="font-bold text-xl text-white tracking-wide mb-4">PT Sentosa Solusi Indonesia</h1>
+        <h2 class="font-semibold text-xl text-white mb-4 tracking-wide">Mensana Tower Lt 5 (voffice) JL Raya Kranggan
+            Rt/Rw 002/016 Kel Jatisampurna Kec Jatisampurna Kota Bekasi – Jawa Barat 17345 Indonesia</h2>
+        <p class="text-sm text-white mb-4 tracking-wide">Phone: +62 21 29 557 336</p>
+        <p class="text-sm overflow-hidden text-white mb-4 tracking-wide">Email: support@sentosasolutions.com</p>
+        <h3 class="text-xl text-white text-center font-bold tracking-wide mt-7">© 2024 - PT Sentosa Solusi Indonesia
+        </h3>
+    </footer>
+
+    <script>
+        // Mengambil elemen gambar dengan id "gambarKlik"
+        var gambar = document.getElementById("logo");
+
+    // Menambahkan event listener untuk menanggapi klik pada gambar
+    gambar.addEventListener("click", function () {
+      // Mengarahkan pengguna ke halaman lain
+      window.location.href = "index.html";
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const cb = document.getElementById('cb');
+      const cb2 = document.getElementById('cb2');
+      const myMenu = document.getElementById('myMenu');
+
+      cb.addEventListener('change', function () {
+        if (this.checked) {
+          myMenu.style.transform = 'translateX(0)';
+        } else {
+          myMenu.style.transform = 'translateX(30rem)';
+        }
+      });
+
+      cb2.addEventListener('change', function () {
+        if (this.checked) {
+          myMenu.style.transform = 'translateX(100%)';
+        } else {
+          myMenu.style.transform = 'translateX(0)';
+        }
+      });
+
+      const menuLinks = myMenu.querySelectorAll('a');
+      menuLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          myMenu.style.transform = 'translateX(100%)';
+          cb.checked = false; // Uncheck cb2 if any link is clicked
+        });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var serviceDropdown = document.getElementById("serviceDropdown");
+      var serviceMenu = document.getElementById("serviceMenu");
+
+      serviceDropdown.addEventListener("click", function (event) {
+        event.stopPropagation();
+        serviceMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("#serviceDropdown")) {
+          serviceMenu.classList.add("hidden");
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var productDropdown = document.getElementById("productDropdown");
+      var productMenu = document.getElementById("productMenu");
+
+      productDropdown.addEventListener("click", function (event) {
+        event.stopPropagation();
+        productMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("#productDropdown")) {
+          productMenu.classList.add("hidden");
+        }
+      });
+    });
+
+    function toggleSubMenu() {
+      var submenu = document.getElementById("serviceSubmenu");
+      var sf = document.getElementById("servicefocus");
+      if (submenu.classList.contains("hidden")) {
+        submenu.classList.remove("hidden");
+        submenu.classList.add("block");
+        sf.classList.add("text-red-600");
+      } else {
+        submenu.classList.remove("block");
+        submenu.classList.add("hidden");
+        sf.classList.remove("text-red-600");
+      }
+    }
+
+    function toggleProductMenu() {
+      var submenu2 = document.getElementById("productSubmenu");
+      var pf = document.getElementById("productfocus");
+
+      if (submenu2.classList.contains("hidden")) {
+        submenu2.classList.remove("hidden");
+        submenu2.classList.add("block");
+        pf.classList.add("text-red-600");
+      } else {
+        submenu2.classList.remove("block");
+        submenu2.classList.add("hidden");
+        pf.classList.remove("text-red-600");
+      }
+    }
+    </script>
+</body>
+</div>
+
+</html>
